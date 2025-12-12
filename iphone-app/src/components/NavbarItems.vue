@@ -45,7 +45,7 @@ const decreasment = () => {
 
 <template>
     <nav class="hidden md:flex lg:flex">
-        <ul class=" grid grid-rows-1 bg-green-200 grid-cols-4 md:grid-cols-6 lg:grid-cols-12 place-content-center items-center">
+        <ul class=" grid grid-rows-1 grid-cols-4 md:grid-cols-6 lg:grid-cols-12 place-content-center items-center">
             <li><a href="" class="flex flex-col items-center"><img :src="iphoneİmg" alt=""><p>iPhone 16 Pro</p></a></li>
             <li><a href="" class="flex flex-col items-center"><img :src="iphoneİmg" alt=""><p>iPhone 16 </p></a></li>
             <li><a href="" class="flex flex-col items-center"><img :src="iphoneİmg" alt=""><p>iPhone 15 </p></a></li>
@@ -68,7 +68,7 @@ const decreasment = () => {
         <button @click="decreasment" class="flex md:hidden lg:hidden  p-2">
             <
         </button> 
-        <ul class="flex items-center justify-between h-[7rem] w-[18rem]">
+        <ul class="flex items-center justify-between h-[7rem] w-[18rem] transistion duration-300 ease">
             <li><a href=""><img :src="data[count].img" alt=""><p>{{ data[count].text }}</p></a></li>
             <li><a href=""><img :src="data[count+1].img" alt=""><p>{{ data[count+1].text }}</p></a></li>
             <li><a href=""><img :src="data[count+2].img" alt=""><p>{{ data[count+2].text }}</p></a></li>

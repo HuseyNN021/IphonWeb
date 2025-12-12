@@ -7,7 +7,7 @@ import basketIcon from '../assets/Images/Navbar/Vector (3).webp'
 
 <template>
 
-    <section class="w-[100vw] flex justify-between md:justify-center lg:justify-center px-4 lg:p-0 items-center gap-3">
+    <section class="w-[90vw] flex justify-between md:justify-center lg:justify-center px-4 lg:p-0 items-center gap-3">
         <a href=""><img :src="appleLogo" alt=""></a>
         <ul class="hidden overflow-x-auto md:flex lg:flex items-center gap-4">
             <li class="text-[#000000CC] text-[0.9rem]"><a href="">Store</a></li>
