@@ -13,6 +13,7 @@ const { title, description, image, textClass } = defineProps({
 <template>
   <section
     class="w-[55vw] md:w-[35vw] lg:w-[20vw] h-[30rem] lg:h-[35rem]
+            hover:scale-105 cursor-pointer
            bg-cover bg-center bg-no-repeat p-3 rounded-2xl"
     :style="{ backgroundImage: `url(${image})` }"
   >

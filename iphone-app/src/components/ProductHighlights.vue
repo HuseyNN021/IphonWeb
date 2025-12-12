@@ -36,8 +36,8 @@ const decreasment = () => {
             <section class="flex justify-center lg:justify-start w-full">
                 <h2 class="font-semibold text-[#1D1D1F] text-[1.5rem] md:text-[2.5rem] lg:text-[3.375rem] md:pl-30 lg:pl-20">Get to know iPhone.</h2>
             </section>
-            <section class="hidden md:grid lg:grid md:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-10 place-content-center">
-                <CardHighlights v-for="value in data" :title="value.title" :description="value.description" :image="value.image" :textClass="value.textClass"/>
+            <section class="hidden md:grid lg:grid md:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-10 place-content-center  ">
+                <CardHighlights     class="transition-transform duration-400 ease-out hover:scale-105" v-for="value in data" :title="value.title" :description="value.description" :image="value.image" :textClass="value.textClass"/>
             </section>
             <div class="flex md:hidden lg:hidden items-center gap-5">
                 <button @click="decreasment" class="h-[10rem] bg-gray-100 p-1 rounded-xl shadow-xl"><</button>
