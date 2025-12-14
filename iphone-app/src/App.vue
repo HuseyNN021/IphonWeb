@@ -8,6 +8,8 @@ import GuidedTourSection from './components/GuidedTourSection.vue';
 import PurchaseBenefits from './components/PurchaseBenefits.vue';
 import IPhoneEssentials from './components/iPhoneEssentials.vue';
 import EcosystemShowcase from './components/EcosystemShowcase.vue';
+import FooterLinks from './components/FooterLinks.vue';
+import FooterSection from './components/FooterSection.vue';
 </script>
 
 <template>
@@ -19,4 +21,6 @@ import EcosystemShowcase from './components/EcosystemShowcase.vue';
   <PurchaseBenefits/>
   <IPhoneEssentials/>
   <EcosystemShowcase/>
+  <FooterLinks/>
+  <FooterSection/>
 </template>
