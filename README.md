@@ -36,7 +36,7 @@ iPhone Website Clone layihəsi, Apple iPhone rəsmi saytından ilhamlanaraq haz�
 👉 **Demo Linki: (https://iphonewebdesign.netlify.app/)
 
 username: admin;
-passwordL 1234;
+password: 1234;
 ---
 
 ⚙️ **Quraşdırma və Yerli İstifadə (Setup and Installation)**
