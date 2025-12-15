@@ -1,11 +1,44 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CardHighlights from './CardHighlights.vue';
 import productImg1 from '../assets/Images/ProductHiglight/productImg1.jpg'
 import productImg2 from '../assets/Images/ProductHiglight/productImg2.webp'
 import productImg3 from '../assets/Images/ProductHiglight/productImg3.webp'
 import productImg4 from '../assets/Images/ProductHiglight/productImg4.webp'
 
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(()=>{
+    gsap.from('.highlightContent',{
+        scrollTrigger: {
+            trigger:'.higlightBox',
+            start: 'top 70%',
+            toggleActions: 'play none none none'
+        },
+        duration: 0.9,
+    scale: 0.8,
+    opacity: 0,
+    y: 20,
+    stagger: 0.18,
+    ease: 'power3.out'
+    })
+
+    gsap.from('.mobileContent',{
+        scrollTrigger: {
+            trigger:'.higlightBox',
+            start: 'top 40%',
+            toggleActions: 'play none none none'
+        },
+        duration: 0.9,
+    scale: 0.8,
+    opacity: 0,
+    y: 20,
+    stagger: 0.18,
+    ease: 'power3.out'
+    })
+})
 
 const data=ref([
     {image: productImg1,title: 'AI‑opening possibilities.', description: 'Apple Intelligence',textClass: 'text-[#F5F5F7]'},
@@ -34,17 +67,17 @@ const decreasment = () => {
 <template>
         <section class="w-full flex items-center justify-center">
             <div class="w-[80vw]">
-                <div class="flex flex-col justify-center items-center gap-5">
+                <div class="flex flex-col justify-center items-center gap-5 higlightBox">
                   
-                    <div class="flex justify-center lg:justify-start w-full">
+                    <div class="highlightTitle flex justify-center lg:justify-start w-full">
                         <h2 class="font-semibold text-[#1D1D1F] text-[1.5rem] md:text-[2.5rem] lg:text-[3.375rem]">Get to know iPhone.</h2>
                     </div>
                     <!-- Desktop -->
-                    <div class="hidden md:grid lg:grid md:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-10 place-content-center  ">
-                        <CardHighlights    class="transition-transform duration-400 ease-out hover:scale-105" v-for="value in data" :title="value.title" :description="value.description" :image="value.image" :textClass="value.textClass"/>
+                    <div class=" hidden md:grid lg:grid md:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-10 place-content-center  ">
+                        <CardHighlights    class="highlightContent transition-transform duration-400 ease-out hover:scale-105" v-for="value in data" :title="value.title" :description="value.description" :image="value.image" :textClass="value.textClass"/>
                     </div>
                     <!-- Mobile -->
-                    <div class="flex md:hidden lg:hidden items-center gap-5">
+                    <div class="mobileContent flex md:hidden lg:hidden items-center gap-5">
                         <button @click="decreasment" class="h-[10rem] bg-gray-100 p-1 rounded-xl shadow-xl"><</button>
                         <div class="grid md:hidden lg:hidden grid-cols-1 gap-5">
                             <CardHighlights  :title="data[index].title" :description="data[index].description" :image="data[index].image" :textClass="data[index].textClass"/>

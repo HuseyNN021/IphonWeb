@@ -1,13 +1,34 @@
 <script setup>
+  import { onMounted } from 'vue';
 import guidedTourImg from '../assets/Images/GuideTour/guideTour.webp'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(()=>{
+    gsap.from('.title',{
+        scrollTrigger:{
+            trigger:'.box',
+            start: 'top 10%',
+            toggleActions: 'play none none none'
+        },
+        duration:0.8,
+        opacity:0,
+        y: -50,
+        stagger:0.18,
+        ease: 'power3.out'
+    })
+     
+})
 </script>
 <template>
 
 <section class="w-full flex justify-center my-10">
-  <div class="w-[80vw] flex flex-col gap-6">
+  <div class="w-[80vw] flex flex-col gap-6 box">
 
     <h2
-      class="font-semibold text-[#1D1D1F]
+      class="title font-semibold text-[#1D1D1F]
              text-[1.5rem] md:text-[2.5rem] lg:text-[3.375rem]
              px-4 md:px-10 lg:px-20"
     >
@@ -22,7 +43,7 @@ import guidedTourImg from '../assets/Images/GuideTour/guideTour.webp'
 
       <div class="absolute inset-0 bg-black/40"></div>
 
-      <div class="relative z-10 p-6 md:p-10 flex flex-col gap-4">
+      <div class="relative z-10 p-6 md:p-10 flex flex-col gap-4 ">
         <h3 class="text-white text-[1.5rem] md:text-[2rem] font-bold max-w-[30rem]">
           A Guided Tour of iPhone 16 & iPhone 16 Pro
         </h3>

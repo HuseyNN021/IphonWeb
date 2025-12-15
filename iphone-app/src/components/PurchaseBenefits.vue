@@ -1,9 +1,44 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref,onMounted, computed } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import benefitsImg1 from '../assets/Images/PurchaseIcons/benefitsImg1.webp'
 import benefitsImg2 from '../assets/Images/PurchaseIcons/benefitsImg2.webp'
 import benefitsImg3 from '../assets/Images/PurchaseIcons/benefitsImg3.webp'
 import benefitsImg4 from '../assets/Images/PurchaseIcons/benefitsImg4.webp'
+
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(()=>{
+    gsap.from('.benefitTitle',{
+        scrollTrigger: {
+            trigger:'.benefitBox',
+            start: 'top 20%',
+            toggleActions: 'play none none none'
+        },
+        duration: 0.9,
+    scale: 0.8,
+    opacity: 0,
+    y: 20,
+    stagger: 0.18,
+    ease: 'power3.out'
+    })
+
+    gsap.from('.benefitContent',{
+        scrollTrigger: {
+            trigger:'.benefitBox',
+            start: 'top 20%',
+            toggleActions: 'play none none none'
+        },
+        duration: 0.9,
+    scale: 0.8,
+    opacity: 0,
+    y: 20,
+    stagger: 0.18,
+    ease: 'power3.out'
+    })
+})
+
 const sliderRef = ref(null)
 
 const benefitsCard=ref([
@@ -44,10 +79,10 @@ const scrollRight = () => {
 
 </script>
 <template>
-  <section class="w-full flex justify-center">
+  <section class="w-full flex justify-center benefitBox">
     <div class="w-[80vw] relative">
       <!-- HEADER -->
-      <div class="flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center mb-6">
+      <div class="benefitTitle flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center mb-6">
         <h2 class="font-semibold text-[1.5rem] md:text-[2.5rem]">
           Why Apple is the best place to buy iPhone.
         </h2>
@@ -68,7 +103,7 @@ const scrollRight = () => {
               v-for="(value,index) in benefitsCard"
               :key="index"
               class="min-w-[280px] bg-white rounded-2xl p-6
-                    shadow-sm snap-start flex-shrink-0 cursor-pointer hover:shadow-xl"
+                    shadow-sm snap-start flex-shrink-0 cursor-pointer hover:shadow-xl benefitContent"
             >
                 <img :src="value.image" alt="">
                 <h3 class="font-semibold mb-2 w-[10rem]">{{ value.title }}</h3>
