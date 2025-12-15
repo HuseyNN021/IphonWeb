@@ -33,8 +33,7 @@ iPhone Website Clone layihəsi, Apple iPhone rəsmi saytından ilhamlanaraq haz�
 
 🌐 **Demo və Canlı Görünüş (Live Demo)**
 
-👉 **Demo Linki:** [*(buraya Netlify / Vercel linkini əlavə edə bilərsən)*
-](https://iphonewebdesign.netlify.app/)
+👉 **Demo Linki: (https://iphonewebdesign.netlify.app/)
 ---
 
 ⚙️ **Quraşdırma və Yerli İstifadə (Setup and Installation)**
