@@ -60,7 +60,7 @@ const scrollRight=()=>{
 
             <!-- Mobile -->
             <div class="block md:hidden lg:hidden">
-                <div ref="sliderRef" class="mobilewrapper relative flex md:hidden lg:hidden w-[80vw] overflow-x-auto scroll-smooth snap-x snap-mandatory bg-amber-200 gap-5">
+                <div ref="sliderRef" class="mobilewrapper relative flex md:hidden lg:hidden w-[80vw] overflow-x-auto scroll-smooth snap-x snap-mandatory  gap-5">
                     <div class="bg-[#F5F5F7] flex flex-col justify-center items-center gap-1 rounded-2xl pt-5 min-w-[70vw] snap-start">
                         <h3 class="font-bold text-[1.7rem]">
                             MagSafe
