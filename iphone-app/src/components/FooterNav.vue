@@ -1,12 +1,83 @@
 <script setup>
+import { reactive, ref } from 'vue';
+import appleLogo from '../assets/Images/Navbar/Vector (5).webp'
 
+const dropDownFooter=reactive([
+    {
+        title:"Shop and Learn",
+        data:['Store','Mac','iPad','iPhone','Watch','Vision','AirPods','TV & Home','AirTag','Accessories','Gift Cards'],  
+        isOpen:false
+    },
+    {
+        title:"Apple Waller",
+        data:['Wallet','Apple Card','Apple Pay','Apple Cash'], 
+        isOpen:false
+    },
+    {
+        title:"Account",
+        data:['Manage Your Apple Account','Apple Store Account','iCloud.com'], 
+        isOpen:false
+    },
+    {
+        title:"Entertainment",
+        data:['Apple One','Apple TV+','Apple Music','Apple Arcade','Apple Fitness+','Apple News+','Apple Podcasts','Apple Books','App Store'], 
+        isOpen:false
+    },
+    {
+        title:"Apple Store",
+        data:['Find a Store','Genius Bar','Today at Apple','Group Reservations','Apple Camp','Apple Store App','Certified Refurbished','Apple Trade In','Financing','Carrier Deals at Apple','Order Status','Shopping Help'],
+        isOpen:false
+    },
+    {
+        title:"For Business",
+        data:['Apple and Business','Shop for Business'],
+        isOpen:false
+    },
+    {
+        title:"For Education",
+        data:['Apple and Education','Shop for K-12','Shop for College'],
+        isOpen:false
+    },
+    {
+        title:"For Healthcare",
+        data:['Apple in Healthcare','Mac in Healthcare','Health on Apple Watch','Health Records on iPhone and iPad'],
+        isOpen:false
+    },
+    {
+        title:"For Government",
+        data:['Shop for Government','Shop for Veterans and Military'],
+        isOpen:false
+    },
+    {
+        title:"Apple Values",
+        data:['Accessibility','Education','Environment','Inclusion and Divversity','Privacy','Racial Equity and Justice','Supply Chain'],
+        isOpen:false
+    },
+    {
+        title:"About Apple",
+        data:['Newsroom','Apple Leadership','Career Opportunities','Investors','Ethics & Compliance','Events','Contact Apple'],
+        isOpen:false
+    },
+])
+
+const toggle=(index)=>{
+    dropDownFooter[index].isOpen=!dropDownFooter[index].isOpen    
+}
 </script>
 
 <template>
-    <section class="w-full flex justify-center items-center">
-        <div class="w-[80vw]">
+    <section class="w-full flex justify-center items-center bg-[#F5F5F7]">
+        <div class="w-[70vw] ">
+            <hr class="bg-gray-700">
+            <!-- Header -->
+            <div class="flex items-center gap-3 p-5">
+                <img :src="appleLogo" alt="">
+                <p>>   iPhone</p>
+            </div>
+
             <!-- Navigation -->
-             <div class="grid grid-cols-3 lg:grid-cols-5 gap-5"> 
+             <!-- Desktop -->
+             <div class="hidden md:grid lg:grid  grid-cols-3 lg:grid-cols-5 gap-5 p-5"> 
                 <div class="flex flex-col gap-5">
                     <ul>
                         <p class="text-[#000000E0] font-bold">Shop and Learn</p>
@@ -116,6 +187,55 @@
                     </ul>
                 </div>
              </div>
+             <!-- Mobil -->
+              <div class="block md:hidden lg:hidden ">
+                <div v-for="(value,index) in dropDownFooter"  :key="index">
+                    <!-- Question -->
+                    <button
+                        @click="toggle(index)"
+                        class="w-full flex justify-between items-center "
+                    >
+                        <p class="text-[#1D1D1F] text-md md:text-xl lg:text-2xl font-bold">{{ value.title }}</p>
+
+                        <!-- Icon (rotates) -->
+                        <span
+                        class="text-md md:text-xl lg:text-2xl mr-3 transform transition-all duration-300 p-1"
+                        :class="value.isOpen ? 'rotate-90' : 'rotate-0'"
+                        >
+                        ›
+                        </span>
+                        
+
+                    </button>   
+                    <hr>
+                    <!-- Answer -->
+                    <transition name="slide">
+                        <div
+                        v-if="value.isOpen"
+                        class="text-[#1D1D1F] mt-2 text-[0.7rem]  leading-relaxed p-3"
+                        >
+                            <p class="text-[0.8rem]" v-for="arr in value.data">{{ arr }}</p>
+                        </div>
+                    </transition>     
+                </div>
+              </div>
+              <p class="p-5">
+                More ways to shop: <a href="" class="text-blue-500">Find an Apple Store</a> or <a href="" class="text-blue-500">other retailler</a> near you. Or call <a href="" class="text-blue-500">1-800-MY-APPLE</a>
+              </p>
+              <hr>
+              <div class="flex flex-col md:flex-row lg:flex-row justify-between p-5">
+                <div class="text-[#0000008F]">
+                    Copyright © 2025 Apple Inc. All rights reserved.
+                </div>
+                <ul class="flex text-[0.7rem] gap-3">
+                    <li><a href="">Privacy Policy | </a></li>
+                    <li><a href="">Terms of Use | </a></li>
+                    <li><a href="">Sales and Refunds | </a></li>
+                    <li><a href="">Legal | </a></li>
+                    <li><a href="">Site Map</a></li>
+                </ul>
+                <div>United States</div>
+              </div>
         </div>
     </section>
 </template>

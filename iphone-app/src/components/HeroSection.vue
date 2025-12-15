@@ -25,7 +25,7 @@ const decreasment = () => {
 
 <template>
     <section class="w-full lg:h-screen flex justify-center items-center">
-        <div class="w-[70vw] flex flex-col gap-2 p-1">
+        <div class="w-[80vw] flex flex-col gap-2 p-1">
             <div class="flex items-center justify-between">
                 <h2 class="font-bold text-[#1D1D1F] text-[1.5rem] lg:text-[5rem]">iPhone</h2>
                 <p class="font-bold text-[#1D1D1F] text-[0.7rem] lg:text-[1.75rem]">Designed to be loved.</p>

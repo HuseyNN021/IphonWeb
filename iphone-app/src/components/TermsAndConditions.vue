@@ -3,8 +3,8 @@
 </script>
 
 <template>
-    <section class="w-full flex justify-center items-center">
-        <div class="w-[80vw] ">
+    <section class="w-full flex justify-center items-center bg-[#F5F5F7]">
+        <div class="w-[70vw] ">
             <!-- List -->
              <div class="text-[#0000008F] text-[0.75rem]">
                 <p>

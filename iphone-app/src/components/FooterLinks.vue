@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="w-full flex justify-center items-center mb-20">
+    <section class="w-full flex justify-center items-center pb-20 bg-[#F5F5F7]">
         <div class="w-[80vw] ">
 
              <!-- HEADER -->

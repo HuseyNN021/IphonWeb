@@ -3,7 +3,7 @@ import guidedTourImg from '../assets/Images/GuideTour/guideTour.webp'
 </script>
 <template>
 
-<section class="w-full flex justify-center">
+<section class="w-full flex justify-center my-10">
   <div class="w-[80vw] flex flex-col gap-6">
 
     <h2
